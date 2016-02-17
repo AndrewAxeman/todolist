@@ -49,7 +49,7 @@ module.exports = class Driver {
 		  if ( err ) {
 		    console.log('got an error');
 		  }
-		  cb( result )
+		  cb( err, result )
 		  // at this point person is null.
 		})
 
