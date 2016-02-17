@@ -12,7 +12,7 @@ var localStorage = require('localStorage')
 */
 
 var app = express()
-var port = 80
+var port = 9000
 
 /**
 * Configure app
