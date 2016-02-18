@@ -26,6 +26,8 @@ module.exports = function ( req, res ){
 
 	            res.json({ token: token, status: 200, message: 'its ok' }) 
                 console.log(err)
+
+
         
 	         
 		 }else{

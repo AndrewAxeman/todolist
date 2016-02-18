@@ -15,15 +15,15 @@ module.exports = function ( req, res ){
 
 			var token = uuid.v1()
 
-	         User.create( { name: req.body.name, password:req.body.password, token: token }, function ( err, entity ){ 
+	         User.create( { name: req.body.name, password:req.body.password, token: token}, function ( err, entity ){ 
 	         //res.send( JSON.stringify({ token: token }) )
-	         res.json({ token: token }) 
+	         res.json({ token: token, message: 'its ok' }) 
              console.log(err)
 	       })           		
 	         
 		}else{
 
-	        res.send('This user exist')
+	        res.json({ message: 'This User Exist' }) 
 
 		}
 	})

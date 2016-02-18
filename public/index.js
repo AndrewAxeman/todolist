@@ -43,7 +43,9 @@ window.createuser = function ( data,val ) {
 	    if( http.readyState == 4 && http.status == 200 ) {
 
 	        var response = JSON.parse( http.responseText )
-	        console.log( response.token )
+
+	        console.log( response.message )
+
             localStorage.setItem( 'token', response.token )
 	    }
 	}
@@ -68,12 +70,9 @@ window.loginuser = function ( name,pass ) {
 
 	         var response = JSON.parse( http.responseText )
 
-	         if( response.status===200 ){
-	         }
-
 	         console.log( response.message )
-             localStorage.setItem( 'token', response.token )
 
+             localStorage.setItem( 'token', response.token )
 
 	    }
 	}
