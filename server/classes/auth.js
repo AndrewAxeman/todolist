@@ -28,9 +28,30 @@ class Auth{
 	        cb( 'This user dont register', null )
 
 		}
+
 	    })
 
      }
+
+    outLogged ( id, cb ){
+
+ 		User.getOne( { _id: id } , function ( err, entity ){ 
+
+		if( entity.token !== "" ){
+         
+         	 cb( null, entity )
+     	         
+		 }else{
+
+	         cb( 'This dont log', null )
+
+	    }
+
+        })
+
+     }    
+
+
 }     
 
 

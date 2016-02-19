@@ -1,5 +1,4 @@
 'use strict'
-var uuid = require('uuid');
 
 var auth = require ('../../classes/auth')  
 
@@ -14,19 +13,17 @@ module.exports = function ( req, res ){
 
 	//User.getOne( { name: req.body.name} , function ( err, entity ){
 
-	auth.isLogged( req.body.name, req.body.password, function ( err, response ){
+	auth.outLogged( req.body.id, function ( err, response ){
 
 		if ( response !== null ){
-         
-         		var token = uuid.v1()
 
-         		User.update({_id:response.id ,token: token}, function ( err, result ){
+         		User.update({_id:response.id ,token: ""  }, function ( err, result ){
 
              	console.log( result )
 
          		})
 
-	            res.json({ token: token, status: 200, message: 'its ok' }) 
+	            res.json({ token: "", status: 200, message: 'its out' }) 
                 console.log(err)
 
 

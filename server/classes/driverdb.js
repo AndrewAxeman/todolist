@@ -59,7 +59,7 @@ module.exports = class Driver {
 
          this.Model.findByIdAndRemove( { _id:id } ,  function ( err, result ){
 		  if ( err ) {
-		    console.log('got an error');
+		    console.log( err );
 		  }
 		  cb( err, result )
 		  // at this point person is null.
