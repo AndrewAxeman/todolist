@@ -25,5 +25,13 @@ module.exports = class Task {
 		
 	
     } 
+
+    get_task( req, res ){
+
+		Task.getOne( { name: req.params.name} , function ( err, entity ){ 
+		res.send(entity)
+		 }) 
+
+    }
 }
 

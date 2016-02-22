@@ -7,6 +7,6 @@ var usersSchema = mongoose.Schema({
 })
 
 
-var users = mongoose.model( 'UserReg', usersSchema )
+var users = mongoose.model( 'Users', usersSchema )
 
 module.exports = users
