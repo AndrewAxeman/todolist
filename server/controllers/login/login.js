@@ -23,7 +23,7 @@ module.exports = function ( req, res ){
 
 	 		User.update({_id: response.id ,token: token}, function ( error, result ){
 
-	     	console.log( result )
+	     		console.log( result )
 
 	 		})
 

@@ -37,15 +37,15 @@ class Auth{
 
  		User.getOne( { _id: id } , function ( err, entity ){ 
 
-		if( entity.token !== "" ){
-         
-         	 cb( null, entity )
-     	         
-		 }else{
+			if( entity.token !== "" ){
+	         
+	         	 cb( null, entity )
+	     	         
+			 }else{
 
-	         cb( 'This dont log', null )
+		         cb( 'This dont log', null )
 
-	    }
+		    }
 
         })
 

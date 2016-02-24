@@ -1,11 +1,5 @@
 'use strict'
 
-// var create_task = require('../controllers/tasks/createtask')
-// var delete_task = require('../controllers/tasks/deletetask')
-// var get_task_id = require('../controllers/tasks/gettaskid')
-// var get_task = require('../controllers/tasks/gettasktext')
-
-
 var User = require('../controllers/users')
 var Tasks = require('../controllers/task')
 // var delete_user = require('../controllers/users/deleteuser')

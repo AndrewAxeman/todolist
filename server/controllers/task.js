@@ -11,22 +11,30 @@ module.exports = class Task {
 	delete_task( req, res ){
          
 		 driverTask.delete( req.body.taskid  , function ( err, result ){
-	     console.log( err )
-	     res.send( { message: "Task was delete" } )
+
+		     console.log( err )
+
+		     res.send( { message: "Task was delete" } )
+	     
 	     } )
 				
 	} 
+
 
 	update_task( req, res ){
 
-
          console.log(req.body.id)
+
 		 driverTask.update( { _id: req.body.id , state: 'passive' }  , function ( err, result ){
-	     console.log( err )
-	     res.send( { message: "Task was Done" } )
+
+		     console.log( err )
+
+		     res.send( { message: "Task was Done" } )
+
 	     } )
 				
 	} 
+
 
 	createtask( req, res ){
         
@@ -34,7 +42,7 @@ module.exports = class Task {
 
              if ( result !=='' ){
 
-					driverTask.create( { text: req.body.text ,id_name: result._id }, function ( err, entity ){ 
+					driverTask.create( { text: req.body.text, id_name: result._id, state: "active" }, function ( err, entity ){ 
 
 						res.json( { message: "Task was create" } )
                 
@@ -49,6 +57,7 @@ module.exports = class Task {
 		})
 			
     } 
+    
 
     getAllTasks( req, res ){
 
@@ -66,7 +75,7 @@ module.exports = class Task {
 
 		     }else{
 
-             res.json( { message: 'This user dont have any task' } )
+             	res.json( { message: 'This user dont have any task' } )
 
 		     }   
 
