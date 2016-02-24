@@ -19,6 +19,16 @@ module.exports = class Driver {
 	}
 
 
+	getALL ( id_name, cb ) {
+
+	this.Model.find( { id_name : id_name } , function ( err, entity ) {
+
+			cb( err, entity )
+
+		})
+	}
+
+
 	getOne ( params, cb ) {
 
 		  this.Model.findOne( params, function ( err, entity ) {
@@ -32,13 +42,13 @@ module.exports = class Driver {
 
 		  })
 
-		}
+	}
 
 
 	getById ( id, cb ) {
 		this.getOne({
 			_id : id
-		}, function( err, entity ) {
+		}, function ( err, entity ) {
 			cb( err, entity )
 		})
 	}

@@ -34,6 +34,9 @@ module.exports = [
 { method:'post', path: '/task', handler: TaskCRUD.createtask.bind( TaskCRUD ) },
 
 { method:'delete', path: '/task', handler: TaskCRUD.delete_task.bind( TaskCRUD ) },
+
+{ method:'get', path: '/task/:id', handler: TaskCRUD.getAllTasks.bind( TaskCRUD ) },
+
 // { method:'get', path: '/getuser/:text', handler: UserCRUD.createuser.bind( UserCRUD ) },
 // { method:'get', path: '/getuserid/:id', handler: UserCRUD.createuser.bind( UserCRUD ) },
 { method:'post', path: '/login', handler: login_user },
