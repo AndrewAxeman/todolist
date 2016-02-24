@@ -9,7 +9,7 @@ var driverUser = new db ('users')
 module.exports = class Task {
 
 	delete_task( req, res ){
-         console.log(req.body.taskid)
+         
 		 driverTask.delete( req.body.taskid  , function ( err, result ){
 	     console.log( err )
 	     res.send( { message: "Task was delete" } )
@@ -17,6 +17,16 @@ module.exports = class Task {
 				
 	} 
 
+	update_task( req, res ){
+
+
+         console.log(req.body.id)
+		 driverTask.update( { _id: req.body.id , state: 'passive' }  , function ( err, result ){
+	     console.log( err )
+	     res.send( { message: "Task was Done" } )
+	     } )
+				
+	} 
 
 	createtask( req, res ){
         

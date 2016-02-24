@@ -37,6 +37,8 @@ module.exports = [
 
 { method:'get', path: '/task/:id', handler: TaskCRUD.getAllTasks.bind( TaskCRUD ) },
 
+{ method:'put', path: '/task', handler: TaskCRUD.update_task.bind( TaskCRUD ) },
+
 // { method:'get', path: '/getuser/:text', handler: UserCRUD.createuser.bind( UserCRUD ) },
 // { method:'get', path: '/getuserid/:id', handler: UserCRUD.createuser.bind( UserCRUD ) },
 { method:'post', path: '/login', handler: login_user },
