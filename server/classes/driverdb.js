@@ -60,7 +60,7 @@ module.exports = class Driver {
 		    console.log('got an error');
 		  }
 		  cb( err, result )
-		  // at this point person is null.
+		  
 		})
 
     }
