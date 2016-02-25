@@ -22,6 +22,7 @@ module.exports = class Task {
 
 
 	update_task( req, res ){
+		
         if ( req.body.state === 'active' ) {
 
 			 driverTask.update( { _id: req.body.id , state: 'passive' }  , function ( err, result ){
@@ -88,7 +89,9 @@ module.exports = class Task {
 				driverTask.getALL( result._id  , function ( err, entity ){
 
 				res.send( entity )
+
                 console.log( entity )
+		        
 		        })
 
 		     }else{
