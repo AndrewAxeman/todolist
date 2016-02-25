@@ -22,48 +22,66 @@ module.exports = class Task {
 
 
 	update_task( req, res ){
+        if ( req.body.state === 'active' ) {
 
-         console.log(req.body.id)
+			 driverTask.update( { _id: req.body.id , state: 'passive' }  , function ( err, result ){
 
-		 driverTask.update( { _id: req.body.id , state: 'passive' }  , function ( err, result ){
+			     console.log( err )
 
-		     console.log( err )
+			     res.send( { message: "Task was Done" } )
+       
+		     } )
 
-		     res.send( { message: "Task was Done" } )
+		}else{
 
-	     } )
-				
+			 driverTask.update( { _id: req.body.id , state: 'active' }  , function ( err, result ){
+
+			     console.log( err )
+
+			     res.send( { message: "Task was Active" } )
+       
+		     } )
+
+
+		}		
 	} 
 
 
 	createtask( req, res ){
-        
-        driverUser.getOne( { token: req.body.token } , function ( error, result ){
+      
+        if( req.body.text !== '' ){
 
-             if ( result !=='' ){
+	        driverUser.getOne( { token: req.body.token } , function ( error, result ){
 
-					driverTask.create( { text: req.body.text, id_name: result._id, state: "active" }, function ( err, entity ){ 
+	             if ( result !=='' ){
 
-						res.json( { message: "Task was create" } )
-                
-                     })                    
-		     
-		     }else{
-            
-            console.log( error )
+						driverTask.create( { text: req.body.text, id_name: result._id, state: "active" }, function ( err, entity ){ 
 
-		     }
+							res.json( { message: "Task was create" } )
+	                
+	                     })                    
+			     
+			     }else{
+	            
+	            console.log( error )
 
-		})
+			     }
+
+			})
+
+		}else{
+		
+             res.json( { message:"Please enter text"} )
+
+
+		}	
 			
     } 
-    
+
 
     getAllTasks( req, res ){
 
         driverUser.getOne( { token: req.params.id } , function ( error, result ){
-
-        	console.log( result._id )
 
              if ( result !== null ){
 

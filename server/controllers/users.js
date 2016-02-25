@@ -19,7 +19,7 @@ module.exports = class User {
 
 		         driverUser.create( { name: req.body.name, password:req.body.password, token: token}, function ( err, entity ){ 
 		         //res.send( JSON.stringify({ token: token }) )
-			         res.json({ token: token, message: 'its ok' }) 
+			         res.json({ token: token, message: 'registration completed', status: 200  }) 
 
 		             console.log(err)
 
@@ -42,7 +42,7 @@ module.exports = class User {
 		     console.log( err )
 
 		     res.json({ message: 'We have a problem' })
-		     
+
 	     } )
 				
 	} 
